@@ -1,0 +1,35 @@
+{
+  "name": "angular-2-hello-world",
+  "version": "0.1.0",
+  "description": "An angular 2 hello world example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agconti/angular-2-hello-world.git"
+  },
+  "keywords": [
+    "Angular",
+    "2",
+    "hello",
+    "world"
+  ],
+  "author": "agconti < Andrew Conti >",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agconti/angular-2-hello-world/issues"
+  },
+  "homepage": "https://github.com/agconti/angular-2-hello-world#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sourcemaps": "^1.5.2"
+  },
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.36",
+    "systemjs": "^0.18.17"
+  }
+}
