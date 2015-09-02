@@ -24,6 +24,7 @@ gulp.task('serve', function() {
         }
     })
     gulp.watch('./src/**/*.js', ['watch:js'])
+    gulp.watch('./**/*.html', browserSync.reload)
 })
 
 gulp.task('default', ['build:js', 'serve'])
