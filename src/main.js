@@ -1,6 +1,6 @@
-import {Componet, View, bootstrap} from 'angular2'
+import {Component, View, bootstrap} from 'angular2/angular2'
 
-@Componet({
+@Component({
   selector: 'helloworld'
 })
 @View({
