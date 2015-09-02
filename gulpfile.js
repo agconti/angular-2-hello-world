@@ -3,16 +3,15 @@ var gulp = require('gulp')
   , babel = require('gulp-babel')
   , concat = require('gulp-concat')
   , browserSync = require('browser-sync').create()
-
+  , bableOptions = { optional: ["es7.decorators"] }
 
 gulp.task('build:js', function () {
-    return gulp.src('src/**/*.js')
+    return gulp.src('./src/**/*.js')
         .pipe(sourcemaps.init())
-        .pipe(babel())
+        .pipe(babel(bableOptions))
         .pipe(concat('all.js'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist'))
-
 })
 
 // create a task that ensures the `build:js` task is complete before
@@ -27,4 +26,4 @@ gulp.task('serve', function() {
     gulp.watch('./src/**/*.js', ['watch:js'])
 })
 
-gulp.task('default', ['serve'])
+gulp.task('default', ['build:js', 'serve'])
