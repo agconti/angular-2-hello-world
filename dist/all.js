@@ -1,23 +1,34 @@
-'use strict';
+System.register(['angular2/angular2'], function (_export) {
+  'use strict';
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+  var Component, View, bootstrap, HelloWorld;
 
-var _angular2 = require('angular2');
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var HelloWorld = (function () {
-  function HelloWorld() {
-    _classCallCheck(this, _HelloWorld);
-  }
+  return {
+    setters: [function (_angular2Angular2) {
+      Component = _angular2Angular2.Component;
+      View = _angular2Angular2.View;
+      bootstrap = _angular2Angular2.bootstrap;
+    }],
+    execute: function () {
+      HelloWorld = (function () {
+        function HelloWorld() {
+          _classCallCheck(this, _HelloWorld);
+        }
 
-  var _HelloWorld = HelloWorld;
-  HelloWorld = (0, _angular2.View)({
-    template: '<h1>Hello World!</h1>'
-  })(HelloWorld) || HelloWorld;
-  HelloWorld = (0, _angular2.Componet)({
-    selector: 'helloworld'
-  })(HelloWorld) || HelloWorld;
-  return HelloWorld;
-})();
+        var _HelloWorld = HelloWorld;
+        HelloWorld = View({
+          template: '<h1>Hello World!</h1>'
+        })(HelloWorld) || HelloWorld;
+        HelloWorld = Component({
+          selector: 'helloworld'
+        })(HelloWorld) || HelloWorld;
+        return HelloWorld;
+      })();
 
-(0, _angular2.bootstrap)(HelloWorld);
+      bootstrap(HelloWorld);
+    }
+  };
+});
 //# sourceMappingURL=all.js.map

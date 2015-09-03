@@ -3,24 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Angular 2 Hello World</title>
-    <script src="./node_modules/angular2/bundles/angular2.js" charset="utf-8"></script>
+    <script src="https://github.jspm.io/jmcriffey/bower-traceur-runtime@0.0.87/traceur-runtime.js"></script>
+    <script src="./node_modules/rx/dist/rx.all.js" charset="utf-8"></script>
     <script src="./node_modules/systemjs/dist/system.js"></script>
+    <script src="./config.js"></script>
+    <script src="./node_modules/angular2/bundles/angular2.js" charset="utf-8"></script>
     <script src="./dist/all.js" charset="utf-8"></script>
   </head>
   <body>
     <helloworld></helloworld>
     <script type="text/javascript">
-      System.config({
-        baseURL: '/'
-      , defaultJSExtensions: true
-      , paths:  {
-          'angular2/*': './node_modules/angular2/*.js' // Angular
-        , 'rx': './node_modules/rx/dist/rx.all.js' // Angular
-        , 'all': './dist/all.js'
-        }
-      })
-
-      System.import('all')
+      System.import("dist/all")
     </script>
   </body>
 </html>

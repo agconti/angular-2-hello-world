@@ -24,15 +24,26 @@
   "homepage": "https://github.com/agconti/angular-2-hello-world#readme",
   "devDependencies": {
     "babel": "^5.8.23",
+    "babel-runtime": "^5.8.20",
     "browser-sync": "^2.8.2",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
     "gulp-concat": "^2.6.0",
-    "gulp-sourcemaps": "^1.5.2"
+    "gulp-sourcemaps": "^1.5.2",
+    "jspm": "^0.16.2"
   },
   "dependencies": {
     "angular2": "^2.0.0-alpha.36",
     "rx": "^3.1.2",
     "systemjs": "^0.18.17"
+  },
+  "jspm": {
+    "directories": {},
+    "dependencies": {},
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.22",
+      "babel-runtime": "npm:babel-runtime@^5.8.20",
+      "core-js": "npm:core-js@^1.1.0"
+    }
   }
 }
