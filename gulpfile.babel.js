@@ -1,14 +1,19 @@
-var gulp = require('gulp')
-  , sourcemaps = require('gulp-sourcemaps')
-  , babel = require('gulp-babel')
-  , concat = require('gulp-concat')
-  , browserSync = require('browser-sync').create()
-  , bableOptions = {
-      optional: ["es7.decorators"]
-    , modules: 'system'
-    }
+import gulp from 'gulp'
+import sourcemaps from 'gulp-sourcemaps'
+import babel from 'gulp-babel'
+import concat from 'gulp-concat'
+import browserSync from 'browser-sync'
 
-gulp.task('build:js', function () {
+let bableOptions = {
+  optional: ["es7.decorators"]
+, modules: 'system'
+}
+
+// intialize browserSync
+browserSync.create()
+
+
+gulp.task('build:js', () => {
     return gulp.src('./src/**/*.js')
         .pipe(sourcemaps.init())
         .pipe(babel(bableOptions))
@@ -17,15 +22,10 @@ gulp.task('build:js', function () {
         .pipe(gulp.dest('dist'))
 })
 
-// create a task that ensures the `build:js` task is complete before
 gulp.task('watch:js', ['build:js'], browserSync.reload)
 
-gulp.task('serve', function() {
-    browserSync.init({
-        server: {
-            baseDir: "./"
-        }
-    })
+gulp.task('serve', () => {
+    browserSync.init({ server: { baseDir: "./" }})
     gulp.watch('./src/**/*.js', ['watch:js'])
     gulp.watch('./**/*.html', browserSync.reload)
 })
