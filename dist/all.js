@@ -1,7 +1,7 @@
 System.register(['angular2/angular2'], function (_export) {
   'use strict';
 
-  var Component, View, bootstrap, HelloWorld;
+  var Component, View, bootstrap, Message, HelloWorld;
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
@@ -12,6 +12,23 @@ System.register(['angular2/angular2'], function (_export) {
       bootstrap = _angular2Angular2.bootstrap;
     }],
     execute: function () {
+      Message = (function () {
+        function Message() {
+          _classCallCheck(this, _Message);
+
+          this.message = 'Hello World';
+        }
+
+        var _Message = Message;
+        Message = View({
+          template: '<h1>{{ message }}</h1>'
+        })(Message) || Message;
+        Message = Component({
+          selector: 'message'
+        })(Message) || Message;
+        return Message;
+      })();
+
       HelloWorld = (function () {
         function HelloWorld() {
           _classCallCheck(this, _HelloWorld);
@@ -19,7 +36,8 @@ System.register(['angular2/angular2'], function (_export) {
 
         var _HelloWorld = HelloWorld;
         HelloWorld = View({
-          template: '<h1>Hello World!</h1>'
+          template: '<message></message>',
+          directives: [Message]
         })(HelloWorld) || HelloWorld;
         HelloWorld = Component({
           selector: 'helloworld'
