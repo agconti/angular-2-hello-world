@@ -4,10 +4,8 @@ import babel from 'gulp-babel'
 import concat from 'gulp-concat'
 import browserSync from 'browser-sync'
 
-let bableOptions = {
-  optional: ["es7.decorators"]
-, modules: 'system'
-}
+const optional = ["es7.decorators"]
+const modules = 'system'
 
 // intialize browserSync
 browserSync.create()
@@ -16,7 +14,7 @@ browserSync.create()
 gulp.task('build:js', () => {
     return gulp.src('./src/**/*.js')
         .pipe(sourcemaps.init())
-        .pipe(babel(bableOptions))
+        .pipe(babel({optional, modules}))
         .pipe(concat('all.js'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist'))
